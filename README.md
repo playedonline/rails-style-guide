@@ -730,9 +730,9 @@ render status: :forbidden
 ### ActiveRecord Queries
 
   * <a name="avoid-interpolation"></a>
-    Avoid string interpolation in
+    **Avoid string interpolation in
     queries, as it will make your code susceptible to SQL injection
-    attacks.
+    attacks.**
     <sup>[[link](#avoid-interpolation)]</sup>
 
     ```ruby
@@ -816,10 +816,10 @@ render status: :forbidden
     ```
 
   * <a name ="order-by-id"></a>
-    Don't use the `id` column for ordering. The sequence of ids is not
+    **Don't use the `id` column for ordering. The sequence of ids is not
     guaranteed to be in any particular order, despite often (incidentally)
     being chronological. Use a timestamp column to order chronologically.
-    As a bonus the intent is clearer.
+    As a bonus the intent is clearer.**
     <sup>[[link](#order-by-id)]</sup>
 
     ```ruby
@@ -871,7 +871,7 @@ render status: :forbidden
     ```
 
   * <a name="size-over-count-or-length"></a>
-    When querying ActiveRecord collections, prefer `size` (selects between count/length behavior based on whether collection is already loaded) or `length` (always loads the whole collection and counts the array elements) over `count` (always does a database query for the count).
+    **When querying ActiveRecord collections, prefer `size` (selects between count/length behavior based on whether collection is already loaded) or `length` (always loads the whole collection and counts the array elements) over `count` (always does a database query for the count).**
     <sup>[[link](#size-over-count-or-length)]</sup>
 
     ```ruby
@@ -955,8 +955,8 @@ render status: :forbidden
     ```
 
   * <a name="define-model-class-migrations"></a>
-    If you have to use models in migrations, make sure you define them
-    so that you don't end up with broken migrations in the future
+    **If you have to use models in migrations, make sure you define them
+    so that you don't end up with broken migrations in the future**
     <sup>[[link](#define-model-class-migrations)]</sup>
 
     ```ruby
@@ -1035,8 +1035,8 @@ render status: :forbidden
     ```
 
   * <a name="reversible-migration"></a>
-    Don't use non-reversible migration commands in the `change` method.
-    Reversible migration commands are listed below.
+    **Don't use non-reversible migration commands in the `change` method.
+    Reversible migration commands are listed below.**
     [ActiveRecord::Migration::CommandRecorder](http://api.rubyonrails.org/classes/ActiveRecord/Migration/CommandRecorder.html)
     <sup>[[link](#reversible-migration)]</sup>
 
