@@ -1,47 +1,3 @@
-# Prelude
-
-> Role models are important. <br/>
-> -- Officer Alex J. Murphy / RoboCop
-
-The goal of this guide is to present a set of best practices and style
-prescriptions for Ruby on Rails 4 development. It's a
-complementary guide to the already existing community-driven
-[Ruby coding style guide](https://github.com/rubocop-hq/ruby-style-guide).
-
-Some of the advice here is applicable only to Rails 4.0+.
-
-You can generate a PDF or an HTML copy of this guide using
-[Pandoc](http://pandoc.org/).
-
-Translations of the guide are available in the following languages:
-
-  * [Chinese Simplified](https://github.com/JuanitoFatas/rails-style-guide/blob/master/README-zhCN.md)
-  * [Chinese Traditional](https://github.com/JuanitoFatas/rails-style-guide/blob/master/README-zhTW.md)
-  * [Japanese](https://github.com/satour/rails-style-guide/blob/master/README-jaJA.md)
-  * [Russian](https://github.com/arbox/rails-style-guide/blob/master/README-ruRU.md)
-  * [Turkish](https://github.com/tolgaavci/rails-style-guide/blob/master/README-trTR.md)
-  * [Korean](https://github.com/pureugong/rails-style-guide/blob/master/README-koKR.md)
-  * [Vietnamese](https://github.com/CQBinh/rails-style-guide/blob/master/README-viVN.md)
-  * [Portuguese (pt-BR)](https://github.com/abraaomiranda/rails-style-guide/blob/master/README-ptBR.md)
-
-# The Rails Style Guide
-
-This Rails style guide recommends best practices so that real-world Rails
-programmers can write code that can be maintained by other real-world Rails
-programmers. A style guide that reflects real-world usage gets used, and a
-style guide that holds to an ideal that has been rejected by the people it
-is supposed to help risks not getting used at all &ndash; no matter how good
-it is.
-
-The guide is separated into several sections of related rules. I've tried to add
-the rationale behind the rules (if it's omitted I've assumed it's pretty
-obvious).
-
-I didn't come up with all the rules out of nowhere - they are mostly based on my
-extensive career as a professional software engineer, feedback and suggestions
-from members of the Rails community and various highly regarded Rails
-programming resources.
-
 ## Table of Contents
 
   * [Configuration](#configuration)
@@ -93,8 +49,8 @@ programming resources.
     <sup>[[link](#app-config)]</sup>
 
   * <a name="staging-like-prod"></a>
-    Create an additional `staging` environment that closely resembles the
-    `production` one.
+    **Create an additional `staging` environment that closely resembles the
+    `production` one.**
     <sup>[[link](#staging-like-prod)]</sup>
 
   * <a name="yaml-config"></a>
@@ -176,7 +132,7 @@ programming resources.
     ```
 
   * <a name="namespaced-routes"></a>
-    If you need to nest routes more than 1 level deep then use the `shallow: true` option. This will save user from long urls `posts/1/comments/5/versions/7/edit` and you from long url helpers `edit_post_comment_version`.
+    **If you need to nest routes more than 1 level deep then use the `shallow: true` option.** This will save user from long urls `posts/1/comments/5/versions/7/edit` and you from long url helpers `edit_post_comment_version`.
 
     ```ruby
     resources :posts, shallow: true do
@@ -215,9 +171,9 @@ programming resources.
 ## Controllers
 
   * <a name="skinny-controllers"></a>
-    Keep the controllers skinny - they should only retrieve data for the view
+    **Keep the controllers skinny - they should only retrieve data for the view
     layer and shouldn't contain any business logic (all the business logic
-    should naturally reside in the model).
+    should naturally reside in the model).**
     <sup>[[link](#skinny-controllers)]</sup>
 
   * <a name="one-method"></a>
