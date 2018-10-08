@@ -607,9 +607,9 @@
         end
         ```
 
-    In order to convert this to a URL-friendly value, `parameterize` should be
-    called on the string. The `id` of the object needs to be at the beginning so
-    that it can be found by the `find` method of ActiveRecord.
+        In order to convert this to a URL-friendly value, `parameterize` should be
+        called on the string. The `id` of the object needs to be at the beginning so
+        that it can be found by the `find` method of ActiveRecord.
 
       * Use the `friendly_id` gem. It allows creation of human-readable URLs by
         using some descriptive attribute of the model instead of its `id`.
@@ -621,8 +621,8 @@
         end
         ```
 
-    Check the [gem documentation](https://github.com/norman/friendly_id) for more
-    information about its usage.
+        Check the [gem documentation](https://github.com/norman/friendly_id) for more
+        information about its usage.
 
   * <a name="find-each"></a>
     Use `find_each` to iterate over a collection of AR objects. Looping through a
