@@ -1210,13 +1210,13 @@ your application.
 ## Mailers
 
   * <a name="mailer-name"></a>
-    Name the mailers `SomethingMailer`. Without the Mailer suffix it isn't
+    **Name the mailers `SomethingMailer`. Without the Mailer suffix it isn't
     immediately apparent what's a mailer and which views are related to the
-    mailer.
+    mailer.**
     <sup>[[link](#mailer-name)]</sup>
 
   * <a name="html-plain-email"></a>
-    Provide both HTML and plain-text view templates.
+    **Provide both HTML and plain-text view templates.**
     <sup>[[link](#html-plain-email)]</sup>
 
   * <a name="enable-delivery-errors"></a>
@@ -1262,9 +1262,9 @@ your application.
     ```
 
   * <a name="url-not-path-in-email"></a>
-    If you need to use a link to your site in an email, always use the `_url`, not
+    **If you need to use a link to your site in an email, always use the `_url`, not
     `_path` methods. The `_url` methods include the host name and the `_path`
-    methods don't.
+    methods don't.**
     <sup>[[link](#url-not-path-in-email)]</sup>
 
     ```ruby
@@ -1308,12 +1308,12 @@ your application.
     ```
 
   * <a name="inline-email-styles"></a>
-    When sending html emails all styles should be inline, as some mail clients
+    **When sending html emails all styles should be inline, as some mail clients
     have problems with external styles. This however makes them harder to maintain
     and leads to code duplication. There are two similar gems that transform the
     styles and put them in the corresponding html tags:
     [premailer-rails](https://github.com/fphilipe/premailer-rails) and
-    [roadie](https://github.com/Mange/roadie).
+    [roadie](https://github.com/Mange/roadie).**
     <sup>[[link](#inline-email-styles)]</sup>
 
   * <a name="background-email"></a>
@@ -1327,7 +1327,7 @@ your application.
 ## Active Support Core Extensions
 
   * <a name="try-bang"></a>
-    Prefer Ruby 2.3's safe navigation operator `&.` over `ActiveSupport#try!`.
+    **Prefer Ruby 2.3's safe navigation operator `&.` over `ActiveSupport#try!`.**
     <sup>[[link](#try-bang)]</sup>
 
 ```ruby
@@ -1427,7 +1427,7 @@ pets.include? 'cat'
     ```
 
   * <a name="time-now"></a>
-    Don't use `Time.now`.
+    **Don't use `Time.now`.**
     <sup>[[link](#time-now)]</sup>
 
     ```ruby
@@ -1442,21 +1442,21 @@ pets.include? 'cat'
 ## Bundler
 
   * <a name="dev-test-gems"></a>
-    Put gems used only for development or testing in the appropriate group in the
-    Gemfile.
+    **Put gems used only for development or testing in the appropriate group in the
+    Gemfile.**
     <sup>[[link](#dev-test-gems)]</sup>
 
   * <a name="only-good-gems"></a>
-    Use only established gems in your projects. If you're contemplating on
+    **Use only established gems in your projects. If you're contemplating on
     including some little-known gem you should do a careful review of its source
-    code first.
+    code first.**
     <sup>[[link](#only-good-gems)]</sup>
 
   * <a name="os-specific-gemfile-locks"></a>
-    OS-specific gems will by default result in a constantly changing
+    **OS-specific gems will by default result in a constantly changing
     `Gemfile.lock` for projects with multiple developers using different operating
     systems.  Add all OS X specific gems to a `darwin` group in the Gemfile, and
-    all Linux specific gems to a `linux` group:
+    all Linux specific gems to a `linux` group:**
     <sup>[[link](#os-specific-gemfile-locks)]</sup>
 
     ```ruby
@@ -1492,47 +1492,8 @@ pets.include? 'cat'
     [foreman](https://github.com/ddollar/foreman) to manage them.
     <sup>[[link](#foreman)]</sup>
 
-# Further Reading
-
-There are a few excellent resources on Rails style, that you should consider if
-you have time to spare:
-
-  * [The Rails 4 Way](http://www.amazon.com/The-Rails-Addison-Wesley-Professional-Ruby/dp/0321944275)
-  * [Ruby on Rails Guides](http://guides.rubyonrails.org/)
-  * [The RSpec Book](http://pragprog.com/book/achbd/the-rspec-book)
-  * [The Cucumber Book](http://pragprog.com/book/hwcuc/the-cucumber-book)
-  * [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)
-  * [Rails 4 Test Prescriptions](https://pragprog.com/book/nrtest2/rails-4-test-prescriptions)
-  * [Better Specs for RSpec](http://betterspecs.org)
-
-# Contributing
-
-Nothing written in this guide is set in stone. It's my desire to work together
-with everyone interested in Rails coding style, so that we could ultimately
-create a resource that will be beneficial to the entire Ruby community.
-
-Feel free to open tickets or send pull requests with improvements. Thanks in
-advance for your help!
-
-You can also support the project (and RuboCop) with financial contributions via
-[Patreon](https://www.patreon.com/bbatsov).
-
-## How to Contribute?
-
-It's easy, just follow the [contribution guidelines](https://github.com/rubocop-hq/rails-style-guide/blob/master/CONTRIBUTING.md).
-
 # License
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
 This work is licensed under a [Creative Commons Attribution 3.0 Unported
 License](http://creativecommons.org/licenses/by/3.0/deed.en_US)
-
-# Spread the Word
-
-A community-driven style guide is of little use to a community that doesn't know
-about its existence. Tweet about the guide, share it with your friends and
-colleagues. Every comment, suggestion or opinion we get makes the guide just a
-little bit better. And we want to have the best possible guide, don't we?
-
-Cheers,<br/>
-[Bozhidar](https://twitter.com/bbatsov)
