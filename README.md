@@ -207,7 +207,7 @@ end
 ### Rendering
 
   * <a name="inline-rendering"></a>
-    Prefer using a template over inline rendering.
+    **Prefer using a template over inline rendering.**
     <sup>[[link](#inline-rendering)]</sup>
 
 ```ruby
@@ -274,7 +274,7 @@ render status: :forbidden
 ## Models
 
   * <a name="model-classes"></a>
-    Introduce non-ActiveRecord model classes freely.
+    **Introduce non-ActiveRecord model classes freely.**
     <sup>[[link](#model-classes)]</sup>
 
   * <a name="meaningful-model-names"></a>
@@ -308,18 +308,18 @@ render status: :forbidden
     [RailsCast on the subject](http://railscasts.com/episodes/326-activeattr).
 
   * <a name="model-business-logic"></a>
-    Unless they have some meaning in the business domain, don't put methods in
+    **Unless they have some meaning in the business domain, don't put methods in
     your model that just format your data (like code generating HTML). These
     methods are most likely going to be called from the view layer only, so their
     place is in helpers. Keep your models for business logic and data-persistence
-    only.
+    only.**
     <sup>[[link](#model-business-logic)]</sup>
 
 ### ActiveRecord
 
   * <a name="keep-ar-defaults"></a>
-    Avoid altering ActiveRecord defaults (table names, primary key, etc) unless
-    you have a very good reason (like a database that's not under your control).
+    **Avoid altering ActiveRecord defaults (table names, primary key, etc) unless
+    you have a very good reason (like a database that's not under your control).**
     <sup>[[link](#keep-ar-defaults)]</sup>
 
     ```ruby
@@ -566,10 +566,10 @@ render status: :forbidden
     ```
 
   * <a name="beware-skip-model-validations"></a>
-    Beware of the behavior of the
+    **Beware of the behavior of the
     [following](http://guides.rubyonrails.org/active_record_validations.html#skipping-validations)
     methods. They do not run the model validations and
-    could easily corrupt the model state.
+    could easily corrupt the model state.**
     <sup>[[link](#beware-skip-model-validations)]</sup>
 
     ```ruby
@@ -654,9 +654,9 @@ render status: :forbidden
     ```
 
   * <a name="before_destroy"></a>
-    Since [Rails creates callbacks for dependent
+    **Since [Rails creates callbacks for dependent
     associations](https://github.com/rails/rails/issues/3458), always call
-    `before_destroy` callbacks that perform validation with `prepend: true`.
+    `before_destroy` callbacks that perform validation with `prepend: true`.**
     <sup>[[link](#before_destroy)]</sup>
 
     ```ruby
@@ -696,8 +696,8 @@ render status: :forbidden
     ```
 
   * <a name="save-bang"></a>
-    When persisting AR objects always use the exception raising bang! method or handle the method return value.
-    This applies to `create`, `save`, `update`, `destroy`, `first_or_create` and `find_or_create_by`.
+    **When persisting AR objects always use the exception raising bang! method or handle the method return value.
+    This applies to `create`, `save`, `update`, `destroy`, `first_or_create` and `find_or_create_by`.**
     <sup>[[link](#save-bang)]</sup>
 
     ```ruby
