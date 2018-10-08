@@ -1076,7 +1076,7 @@ render status: :forbidden
 ## Views
 
   * <a name="no-direct-model-view"></a>
-    Never call the model layer directly from a view.
+    **Never call the model layer directly from a view.**
     <sup>[[link](#no-direct-model-view)]</sup>
 
   * <a name="no-complex-view-formatting"></a>
@@ -1091,9 +1091,9 @@ render status: :forbidden
 ## Internationalization
 
   * <a name="locale-texts"></a>
-    No strings or other locale specific settings should be used in the views,
+    **No strings or other locale specific settings should be used in the views,
     models and controllers. These texts should be moved to the locale files in the
-    `config/locales` directory.
+    `config/locales` directory.**
     <sup>[[link](#locale-texts)]</sup>
 
   * <a name="translated-labels"></a>
@@ -1185,18 +1185,18 @@ Use the [assets pipeline](http://guides.rubyonrails.org/asset_pipeline.html) to 
 your application.
 
   * <a name="reserve-app-assets"></a>
-    Reserve `app/assets` for custom stylesheets, javascripts, or images.
+    **Reserve `app/assets` for custom stylesheets, javascripts, or images.**
     <sup>[[link](#reserve-app-assets)]</sup>
 
   * <a name="lib-assets"></a>
-    Use `lib/assets` for your own libraries that don’t really fit into the
-    scope of the application.
+    **Use `lib/assets` for your own libraries that don’t really fit into the
+    scope of the application.**
     <sup>[[link](#lib-assets)]</sup>
 
   * <a name="vendor-assets"></a>
-    Third party code such as [jQuery](http://jquery.com/) or
+    **Third party code such as [jQuery](http://jquery.com/) or
     [bootstrap](http://twitter.github.com/bootstrap/) should be placed in
-    `vendor/assets`.
+    `vendor/assets`.**
     <sup>[[link](#vendor-assets)]</sup>
 
   * <a name="gem-assets"></a>
