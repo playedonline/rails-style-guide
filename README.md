@@ -189,20 +189,20 @@
     Controller actions specified in the option of Action Filter should be in lexical scope. The ActionFilter specified for an inherited action makes it difficult to understand the scope of its impact on that action.
     <sup>[[link](#lexically-scoped-action-filter)]</sup>
 
-```ruby
-# bad
-class UsersController < ApplicationController
-  before_action :require_login, only: :export
-end
+    ```ruby
+    # bad
+    class UsersController < ApplicationController
+      before_action :require_login, only: :export
+    end
 
-# good
-class UsersController < ApplicationController
-  before_action :require_login, only: :export
+    # good
+    class UsersController < ApplicationController
+      before_action :require_login, only: :export
 
-  def export
-  end
-end
-```
+      def export
+      end
+    end
+    ```
 
 ### Rendering
 
@@ -210,66 +210,66 @@ end
     **Prefer using a template over inline rendering.**
     <sup>[[link](#inline-rendering)]</sup>
 
-```ruby
-# very bad
-class ProductsController < ApplicationController
-  def index
-    render inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>", type: :erb
-  end
-end
+    ```ruby
+    # very bad
+    class ProductsController < ApplicationController
+      def index
+        render inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>", type: :erb
+      end
+    end
 
-# good
-## app/views/products/index.html.erb
-<%= render partial: 'product', collection: products %>
+    # good
+    ## app/views/products/index.html.erb
+    <%= render partial: 'product', collection: products %>
 
-## app/views/products/_product.html.erb
-<p><%= product.name %></p>
-<p><%= product.price %></p>
+    ## app/views/products/_product.html.erb
+    <p><%= product.name %></p>
+    <p><%= product.price %></p>
 
-## app/controllers/foo_controller.rb
-class ProductsController < ApplicationController
-  def index
-    render :index
-  end
-end
-```
+    ## app/controllers/foo_controller.rb
+    class ProductsController < ApplicationController
+      def index
+        render :index
+      end
+    end
+    ```
 
   * <a name="plain-text-rendering"></a>
     Prefer `render plain:` over `render text:`.
     <sup>[[link](#plain-text-rendering)]</sup>
 
-```ruby
-# bad - sets MIME type to `text/html`
-...
-render text: 'Ruby!'
-...
+    ```ruby
+    # bad - sets MIME type to `text/html`
+    ...
+    render text: 'Ruby!'
+    ...
 
-# bad - requires explicit MIME type declaration
-...
-render text: 'Ruby!', content_type: 'text/plain'
-...
+    # bad - requires explicit MIME type declaration
+    ...
+    render text: 'Ruby!', content_type: 'text/plain'
+    ...
 
-# good - short and precise
-...
-render plain: 'Ruby!'
-...
-```
+    # good - short and precise
+    ...
+    render plain: 'Ruby!'
+    ...
+    ```
 
   * <a name="http-status-code-symbols"></a>
     Prefer [corresponding symbols](https://gist.github.com/mlanett/a31c340b132ddefa9cca) to numeric HTTP status codes. They are meaningful and do not look like "magic" numbers for less known HTTP status codes.
     <sup>[[link](#http-status-code-symbols)]</sup>
 
-```ruby
-# bad
-...
-render status: 403
-...
+    ```ruby
+    # bad
+    ...
+    render status: 403
+    ...
 
-# good
-...
-render status: :forbidden
-...
-```
+    # good
+    ...
+    render status: :forbidden
+    ...
+    ```
 
 ## Models
 
@@ -1330,65 +1330,65 @@ your application.
     **Prefer Ruby 2.3's safe navigation operator `&.` over `ActiveSupport#try!`.**
     <sup>[[link](#try-bang)]</sup>
 
-```ruby
-# bad
-obj.try! :fly
+    ```ruby
+    # bad
+    obj.try! :fly
 
-# good
-obj&.fly
-```
+    # good
+    obj&.fly
+    ```
 
   * <a name="active_support_aliases"></a>
     Prefer Ruby's Standard Library methods over `ActiveSupport` aliases.
     <sup>[[link](#active_support_aliases)]</sup>
 
-```ruby
-# bad
-'the day'.starts_with? 'th'
-'the day'.ends_with? 'ay'
+    ```ruby
+    # bad
+    'the day'.starts_with? 'th'
+    'the day'.ends_with? 'ay'
 
-# good
-'the day'.start_with? 'th'
-'the day'.end_with? 'ay'
-```
+    # good
+    'the day'.start_with? 'th'
+    'the day'.end_with? 'ay'
+    ```
 
   * <a name="active_support_extensions"></a>
     Prefer Ruby's Standard Library over uncommon ActiveSupport extensions.
     <sup>[[link](#active_support_extensions)]</sup>
 
-```ruby
-# bad
-(1..50).to_a.forty_two
-1.in? [1, 2]
-'day'.in? 'the day'
+    ```ruby
+    # bad
+    (1..50).to_a.forty_two
+    1.in? [1, 2]
+    'day'.in? 'the day'
 
-# good
-(1..50).to_a[41]
-[1, 2].include? 1
-'the day'.include? 'day'
-```
+    # good
+    (1..50).to_a[41]
+    [1, 2].include? 1
+    'the day'.include? 'day'
+    ```
 
   * <a name="inquiry"></a>
     Prefer Ruby's comparison operators over ActiveSupport's `Array#inquiry`, and `String#inquiry`.
     <sup>[[link](#inquiry)]</sup>
 
-```ruby
-# bad - String#inquiry
-ruby = 'two'.inquiry
-ruby.two?
+    ```ruby
+    # bad - String#inquiry
+    ruby = 'two'.inquiry
+    ruby.two?
 
-# good
-ruby = 'two'
-ruby == 'two'
+    # good
+    ruby = 'two'
+    ruby == 'two'
 
-# bad - Array#inquiry
-pets = %w(cat dog).inquiry
-pets.gopher?
+    # bad - Array#inquiry
+    pets = %w(cat dog).inquiry
+    pets.gopher?
 
-# good
-pets = %w(cat dog)
-pets.include? 'cat'
-```
+    # good
+    pets = %w(cat dog)
+    pets.include? 'cat'
+    ```
 
 ## Time
 
